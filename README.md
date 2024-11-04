@@ -4,11 +4,15 @@ This is a proposal for replacing the fomod file format for mod installations. Cu
 
 To use it you would create a `mi.json` file in the root of your mod archive.
 
+## Versions
+
+- [1.0.0](/1-0-0.json)
+
 ## Comparison
 
 The respective installations are ~44KB vs ~18KB big.
 
-### FOMOD
+### FOMOD 5.0
 
 /fomod/info.xml
 ```xml
@@ -695,7 +699,7 @@ The respective installations are ~44KB vs ~18KB big.
 </config>
 ```
 
-## MI
+## MI 1.0
 
 /mi.json
 
