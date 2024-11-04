@@ -6,7 +6,7 @@ To use it you would create a `mi.json` file in the root of your mod archive.
 
 ## Comparison
 
-The respective installations are ~44KB vs 18KB big.
+The respective installations are ~44KB vs ~18KB big.
 
 ### FOMOD
 
