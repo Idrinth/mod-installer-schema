@@ -113,12 +113,14 @@
           },
           "requiredFlags": {
             "type": "array",
+            "minItems": 1,
             "items": {
               "type": "string"
             }
           },
           "forbiddenFlags": {
             "type": "array",
+            "minItems": 1,
             "items": {
               "type": "string"
             }
@@ -163,6 +165,15 @@
                             "type": "string"
                           }
                         },
+                        "description": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "image": {
+                          "type": "string",
+                          "pattern": "/.+\\.(png|jpg)",
+                          "minLength": 4
+                        },
                         "forbiddenFlags": {
                           "type": "array",
                           "items": {
@@ -171,10 +182,9 @@
                         },
                         "setFlags": {
                           "type": "array",
+                          "minItems": 1,
                           "items": {
-                            "required": [],
-                            "type": "string",
-                            "properties": {}
+                            "type": "string"
                           }
                         }
                       },
@@ -208,7 +218,7 @@
           "to": {
             "type": "string",
             "minLength": 1,
-            "pattern": "/.+"
+            "pattern": "/.*"
           },
           "requiredFlags": {
             "type": "array",
