@@ -713,7 +713,7 @@ The respective installations are ~44KB vs ~18KB big.
     {
       "name": "Björn 'Idrinth' Büttner",
       "roles": [
-      	"voice actor",
+        "voice actor",
         "writer",
         "coder",
         "translator"
@@ -844,7 +844,7 @@ The respective installations are ~44KB vs ~18KB big.
     "https://discord.gg/idrinth"
   ],
   "setFileSystemFlags": {
-  	"/skse64_loader.exe": "skse64-loaded",
+    "/skse64_loader.exe": "skse64-loaded",
     "/data/skse/plugins/spid.dll": "spid-loaded",
     "/data/SkyUI.esp": "skyui-loaded",
     "/data/skse/plugins/jcontainers.dll": "jcontainers-loaded",
@@ -956,22 +956,22 @@ The respective installations are ~44KB vs ~18KB big.
           "name": "Mods supported through SPID",
           "mode": "SelectAll",
           "options": {
-          	"Cloaks of Skyrim": {
+            "Cloaks of Skyrim": {
               "description": "Idrinth will get a cloak if both mods are installed."
             },
-          	"Ordinator": {
+            "Ordinator": {
               "description": "Idrinth will get a few additional spells to represent his experience."
             },
-          	"Awakening": {
+            "Awakening": {
               "description": "Idrinth will be affected by the vampire improvements of this mod, making him a more dangerous foe or ally."
             },
-          	"Wintersun": {
+            "Wintersun": {
               "description": "Fitting to his backstory, he will get an ancestor lantern added, representing his connection to Trinimac."
             },
-          	"Idrinth's Tweaks - Beginnings": {
+            "Idrinth's Tweaks - Beginnings": {
               "description": "Idrinth gains appropriate perks from this mod, that fit his background."
             },
-          	"Idrinth's Tweaks - Racial Skill": {
+            "Idrinth's Tweaks - Racial Skill": {
               "description": "Idrinth gains all Altmer and Vampire skills from this mod, representing his age and experience."
             }
           }
@@ -979,7 +979,7 @@ The respective installations are ~44KB vs ~18KB big.
       ]
     },
     {
-      "name": "Traslations",
+      "name": "Translations",
       "requiredFlags": [
         "dynamic-string-distributor-loaded"
       ],
@@ -988,59 +988,141 @@ The respective installations are ~44KB vs ~18KB big.
           "name": "Text translations",
           "mode": "SelectUpToOne",
           "options": {
-          	"Deutsch(teilweise KI)": {
+            "Deutsch(teilweise KI)": {
               "description": "Deutsche Übersetzung aller Texte im Mod mit Dynamic String Distributor.",
               "setFlags": [
                 "translate-german"
               ]
             },
-          	"Français(partiellement AI)": {
+            "Français(partiellement AI)": {
               "description": "Traduction française de tous les textes dans le mod en utilisant Dynamic String Distributor.",
               "setFlags": [
                 "translate-french"
               ]
             },
-          	"Italian(purely AI)": {
+            "Italian(purely AI)": {
               "description": "Traduzione italiana di tutti i testi del mod usando Dynamic String Distributor.",
               "setFlags": [
                 "translate-italian"
               ]
             },
-          	"Русский (чисто ИИ)": {
+            "Русский (чисто ИИ)": {
               "description": "Русский перевод всех текстов в моде с использованием динамического дистрибутора.",
               "setFlags": [
                 "translate-russian"
               ]
             },
-          	"Español(púrpuramente AI)": {
+            "Español(púrpuramente AI)": {
               "description": "Traducción al español de todos los textos en el mod usando Dynamic String Distributor.",
               "setFlags": [
                 "translate-spanish"
               ]
             },
-          	"Polski (wyłącznie AI)": {
+            "Polski (wyłącznie AI)": {
               "description": "Polski tłumaczenie wszystkich tekstów w modzie za pomocą Dynamic String Distributor.",
               "setFlags": [
                 "translate-polish"
               ]
             },
-          	"中文、 傳統( 纯 AI)": {
+            "中文、 傳統( 纯 AI)": {
               "description": "使用動態字串分配器對模組中的所有文字進行繁體中文翻譯。",
               "setFlags": [
                 "translate-chinese-traditional"
               ]
             },
-          	"中文,简化(纯AI)": {
+            "中文,简化(纯AI)": {
               "description": "使用 Dynamic String Distributor 来简化所有 Mod文本的中文翻译.",
               "setFlags": [
                 "translate-chinese-simplified"
               ]
             },
-          	"日本語(純粋AI)": {
+            "日本語(純粋AI)": {
               "description": "動的文字列のディストリビューターを使用して、MOD内のすべてのテキストの日本語訳.",
               "setFlags": [
                 "translate-japanese"
               ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Cross-Mod",
+      "requiredFlags": [
+        "idrinth-patchless-integration-framework-loaded"
+      ],
+      "groups": [
+        {
+          "name": "Interactions",
+          "mode": "SelectAll",
+          "options": {
+            "Deimos": {
+              "description": "Hosted in this mod, there are currently 14 interactions with this imperial. He himself features custom voiced dialogue, a compelling backstory as well as a quest chain."
+            },
+            "Irene Grey": {
+              "description": "Hosted in this mod, there are currently 19 interactions with this breton. She herself is an enchanter with an interesting backstory and custom voiced dialogue."
+            },
+            "Isadore": {
+              "description": "Hosted in their mod, there are currently 5 interactions with this wood elf. He himself features custom voiced dialogue and a quest chain. These interactions are not translated to other languages than english unless you patch the Isadore mod.",
+              "image": "/fomod/isadore.png"
+            }
+          }
+        },
+        {
+          "name": "Follower Acknowledgements and Commentary",
+          "mode": "SelectAll",
+          "options": {
+            "Xelzaz": {
+              "description": "There is idle chatter acknowledging the presence of Xelzaz present. This argonian Alchemist is a member of house Telvanni."
+            },
+            "Caryalind Thallery": {
+              "description": "There is idle chatter acknowledging the presence of Caryalind present. He is an Altmer prince with custom voiced dialogue."
+            },
+            "Isadore": {
+              "description": "This wood elf is heavily commented on with idle chatter. He himself features custom voiced dialogue and a quest chain.",
+              "image": "/fomod/isadore.png"
+            },
+            "Bowen": {
+              "description": "There is idle chatter acknowledging the presence of Bowen present. This traveller is a great quality of life addition to any party."
+            },
+            "Varrik Veil": {
+              "description": "There is idle chatter acknowledging the presence of Varrik present. This follower of Boethiah enriches the game with his dad jokes."
+            },
+            "Flint": {
+              "description": "There is idle chatter acknowledging the presence of Flint present. This minotaur is an unusual addition for any party."
+            },
+            "Lucien": {
+              "description": "There is idle chatter acknowledging the presence of Lucien present. This enthusiastic young scholar brings a lot of potential."
+            },
+            "Sa'Chil": {
+              "description": "There is idle chatter acknowledging the presence of Sa'Chil present. This opinionated Khajiit is a good investment for future income."
+            },
+            "Val Serano": {
+              "description": "There is idle chatter acknowledging the presence of this pirate."
+            },
+            "Auri": {
+              "description": "There is idle chatter acknowledging the presence of this wood elf archer."
+            },
+            "Aniya": {
+              "description": "There is idle chatter acknowledging the presence of this sweettooth."
+            },
+            "Thogra": {
+              "description": "There is idle chatter acknowledging the presence of this orc widow. The intended mod variant is the custom voiced version 2."
+            },
+            "Artigun": {
+              "description": "There is idle chatter acknowledging the presence of this suspicious character. His interest in dragons and their language does not go unnoticed."
+            }
+          }
+        },
+        {
+          "name": "Mod Integrations",
+          "mode": "SelectAll",
+          "options": {
+            "Survival Mode": {
+              "description": "Survival Mode is recognised and commented on. All three values used to track your status are considered and you get advise based on them."
+            },
+            "Skyrim's Got Talent": {
+              "description": "Your talent as a bard will be recognised and commented on if you play good or bad. Comments on it are randomized, so may not always fire right away - the same way that normal NPCs are not guranteed to react every time."
             }
           }
         }
