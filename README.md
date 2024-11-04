@@ -695,6 +695,8 @@ To use it you would create a `mi.json` file in the root of your mod archive.
 
 ## MI
 
+/mi.json
+
 ```json
 {
   "name": "Idrinth Thalui",
