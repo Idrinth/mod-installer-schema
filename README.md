@@ -14,6 +14,8 @@ All schemata are MIT-Licensed.
 - [1.0.1](/schema/1-0-1.json)
 - [1.0.2](/schema/1-0-2.json)
 - [1.1.0](/schema/1-1-0.json)
+- [1.2.0](/schema/1-2-0.json)
+- [latest](/schema/latest.json)
 
 ## Comparison
 
