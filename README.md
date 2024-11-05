@@ -8,6 +8,296 @@ To use it you would create a `mi.json` file in the root of your mod archive.
 
 - [1.0.0](/schema/1-0-0.json)
 
+## Current Schema
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://mi.idrinth.de/schema/1-0-0.json",
+  "description": "A simple Mod Installer definition to replace FOMODs.",
+  "type": "object",
+  "properties": {
+    "schemaVersion": {
+      "type": "string",
+      "pattern": "\\d+\\.\\d+\\.\\d+",
+      "description": "This is an info for the installer only, so that possible breaking changes can be handled without issues."
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1,
+      "description": "The name of your mod for display in the title bar of the installer."
+    },
+    "version": {
+      "type": "string",
+      "pattern": "\\d+\\.\\d+\\.\\d+",
+      "description": "The version of your mod for displaying it to the user in the title bar of the installer."
+    },
+    "authors": {
+      "type": "array",
+      "uniqueItems": true,
+      "minItems": 1,
+      "description": "People involved in this mod's creation. The intention is providing a last page in the installer listing them with their information.",
+      "items": {
+        "required": [
+          "name"
+        ],
+        "properties": {
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "roles": {
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "description": "Roles are meant to be used for grouping similar activities. Their values are user provided though.",
+            "items": {
+              "type": "string"
+            }
+          },
+          "description": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 1000,
+            "description": "A free text of up to 1000 characters to describe the author or contributor to the mod users. Will be shown when hovering over the entry."
+          },
+          "image": {
+            "type": "string",
+            "minLength": 4,
+            "pattern": "/.+\\.(png|jpg)",
+            "description": "A path to a profile picture of the contributor, shown when hovering over their entry."
+          },
+          "website": {
+            "type": "string",
+            "minLength": 8,
+            "pattern": "^http",
+            "description": "Link to be displayed near the description when hovering over the entry."
+          }
+        }
+      }
+    },
+    "websites": {
+      "type": "array",
+      "uniqueItems": true,
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 8,
+        "pattern": "^http"
+      }
+    },
+    "image": {
+      "type": "string",
+      "pattern": "/.+\\.(png|jpg)",
+      "minLength": 4
+    },
+    "readme": {
+      "type": "string",
+      "description": "To be displayed as the first page if set.",
+      "minLength": 1
+    },
+    "setFileSystemFlags": {
+      "type": "object",
+      "patternProperties": {
+        "/.+": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "steps": {
+      "type": "array",
+      "uniqueItems": true,
+      "minItems": 1,
+      "description": "These install steps are always ordered explicitly. And will only be displayed if all requiredFlags are set and none of the forbiddenFlags.",
+      "items": {
+        "required": [
+          "name",
+          "groups"
+        ],
+        "properties": {
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "readme": {
+            "type": "string",
+            "minLength": 1
+          },
+          "requiredFlags": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "string"
+            }
+          },
+          "forbiddenFlags": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "string"
+            }
+          },
+          "groups": {
+            "type": "array",
+            "uniqueItems": true,
+            "minItems": 1,
+            "items": {
+              "required": [
+                "name",
+                "mode"
+              ],
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "failure": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "mode": {
+                  "type": "string",
+                  "enum": [
+                    "SelectOne",
+                    "SelectUpToOne",
+                    "SelectAny",
+                    "SelectAtLeastOne",
+                    "SelectAll"
+                  ]
+                },
+                "options": {
+                  "type": "object",
+                  "patternProperties": {
+                    ".+": {
+                      "type": "object",
+                      "properties": {
+                        "requiredFlags": {
+                          "type": "array",
+                          "items": {
+                            "type": "string"
+                          }
+                        },
+                        "description": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "image": {
+                          "type": "string",
+                          "pattern": "/.+\\.(png|jpg)",
+                          "minLength": 4
+                        },
+                        "forbiddenFlags": {
+                          "type": "array",
+                          "items": {
+                            "type": "string"
+                          }
+                        },
+                        "setFlags": {
+                          "type": "array",
+                          "minItems": 1,
+                          "items": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "required": []
+                    }
+                  },
+                  "required": []
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "installFolders": {
+      "type": "array",
+      "uniqueItems": true,
+      "minItems": 1,
+      "description": "These folders are processed after the install steps, making sure the requiredFlags and forbiddenFlags are available. If not set or empty, conditions are considered fullfilled.",
+      "items": {
+        "required": [
+          "from",
+          "to"
+        ],
+        "properties": {
+          "from": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "/.+"
+          },
+          "to": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "/.*"
+          },
+          "requiredFlags": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "string"
+            }
+          },
+          "forbiddenFlags": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "installFiles": {
+      "type": "array",
+      "uniqueItems": true,
+      "minItems": 1,
+      "description": "These files are processed after the install steps, making sure the requiredFlags and forbiddenFlags are available. If not set or empty, conditions are considered fullfilled.",
+      "items": {
+        "required": [
+          "from",
+          "to"
+        ],
+        "properties": {
+          "from": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "/.+"
+          },
+          "to": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "/.+"
+          },
+          "requiredFlags": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "string"
+            }
+          },
+          "forbiddenFlags": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  },
+  "required": [
+    "name",
+    "authors",
+    "version",
+    "schemaVersion"
+  ]
+}
+```
+
 ## Comparison
 
 The respective installations are ~44KB vs ~22KB big.
