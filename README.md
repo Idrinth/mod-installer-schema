@@ -7,6 +7,7 @@ To use it you would create a `mi.json` file in the root of your mod archive.
 ## Versions
 
 - [1.0.0](/schema/1-0-0.json)
+- [1.0.1](/schema/1-0-1.json)
 
 ## Comparison
 
