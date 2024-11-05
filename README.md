@@ -1,4 +1,4 @@
-# mod-installer-schema
+# Mod Installeer Schema
 
 This is a proposal for replacing the fomod file format for mod installations.
 
