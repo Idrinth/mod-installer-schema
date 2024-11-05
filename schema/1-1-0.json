@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://mi.idrinth.de/schema/1-0-0.json",
+  "$id": "https://mi.idrinth.de/schema/1-1-0.json",
   "description": "A simple Mod Installer definition to replace FOMODs.",
   "type": "object",
   "properties": {
