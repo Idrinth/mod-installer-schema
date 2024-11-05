@@ -8,6 +8,7 @@ To use it you would create a `mi.json` file in the root of your mod archive.
 
 - [1.0.0](/schema/1-0-0.json)
 - [1.0.1](/schema/1-0-1.json)
+- [1.0.2](/schema/1-0-2.json)
 
 ## Comparison
 
