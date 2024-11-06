@@ -1,0 +1,13 @@
+html, body, .markdown-body  {
+  background: rgba(0,0,0,0.75);
+  color: rgb(200,220,200);
+}
+a {
+  color: green;;
+}
+.markdown-body .highlight pre, .markdown-body pre {
+  background: transparent;
+}
+.highlight {
+  background: rgba(220, 255, 220, 0.15);
+}
